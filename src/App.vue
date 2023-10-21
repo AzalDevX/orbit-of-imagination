@@ -1,15 +1,10 @@
 <script setup>
-import { RouterLink, RouterView } from 'vue-router'
+import Menu from './components/Menu.vue'
 import './styles/App.css'
 </script>
 
 <template>
-      <nav class="menu">
-        <RouterLink to="/">Home</RouterLink>
-        <RouterLink to="/about">About</RouterLink>
-        <RouterLink to="/projects">Projects</RouterLink>
-      </nav>
-
+  <Menu />
   <RouterView />
 </template>
 

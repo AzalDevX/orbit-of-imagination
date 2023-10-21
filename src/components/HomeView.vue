@@ -10,7 +10,7 @@
         </div>
       </header>
 		  <p>{{ userInformation.bio }}</p>
-		  <p>Repositorios públicos: {{ userInformation.public_repos }}</p>
+		  <p>Public repos: {{ userInformation.public_repos }}</p>
       <p>Company: {{ userInformation.company }}</p>
       <p v-if="userInformation.bio">Bio: {{ userInformation.bio }}</p>
       <p v-else>No bio yet</p>
