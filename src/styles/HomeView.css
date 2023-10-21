@@ -1,0 +1,57 @@
+.header-card {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+	width: max-content;
+	margin-top: 2rem;
+}
+  
+.avatar {
+	width: 7rem;
+	height: 7rem;
+	border-radius: 50%;
+	margin-right: 1rem;
+	transition-duration: .5s;
+}
+
+.avatar:hover{
+	cursor: pointer;
+	transform: scale(1.1);
+	transition-duration: .3s;
+}
+  
+.header-card div {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: flex-start;
+}
+
+.user-card {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin-top: 2rem;
+}
+
+.user-info {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	/* text-align: center; */
+	backdrop-filter: blur(10px);
+	border-radius: 0.5rem;
+	padding: 1rem 2.5rem 2.5rem 2.5rem;
+	box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.1);
+}
+  
+h2 {
+	font-size: 2rem;
+	margin-bottom: 0.5rem;
+}
+  
+p {
+	font-size: 1.2rem;
+	margin-bottom: 0.5rem;
+}
