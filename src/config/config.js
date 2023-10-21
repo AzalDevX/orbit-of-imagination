@@ -6,7 +6,7 @@ export default {
       bg_image: "./assets/background.png",
     },
     gh: {
-      account: "LaloruHub",
+      account: "ArkaitzL",
     //   repos_per_page: 10,
     },
   };

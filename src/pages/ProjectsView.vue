@@ -1,14 +1,18 @@
 <template>
-	<div class="repositories" v-if="userRepositories">
-		<h3>Repositorios de {{ capitalizeFirstLetter(username) }}</h3>
-		<div v-for="repo in userRepositories" :key="repo.id" class="repo-card">
-		  <a :href="repo.html_url" target="_blank">{{ repo.name }}</a>
-		  <p>{{ repo.description }}</p>
-      <p>Lenguaje: {{ repo.language }}</p>
-      <p>Estrellas: {{ repo.stargazers_count }}</p>
-		</div>
-	</div>
-  </template>  
+  <h3>Repositorios de {{ capitalizeFirstLetter(username) }}</h3>
+  <div class="repositories" v-if="userRepositories">
+    <div class="repo-card-container" v-for="repo in userRepositories" :key="repo.id">
+      <div class="repo-card">
+        <a :href="repo.html_url" target="_blank">{{ repo.name }}</a>
+        <p>{{ repo.description }}</p>
+        <div class="repo-card-details">
+          <p>Language: {{ repo.language }}</p>
+          <p>Stars: {{ repo.stargazers_count }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</template>
 
 <script>
 import config from '../config/config.js'

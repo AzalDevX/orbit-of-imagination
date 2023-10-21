@@ -1,5 +1,5 @@
 <script setup>
-import Menu from './components/Menu.vue'
+import Menu from './components/MenuComponent.vue'
 import './styles/App.css'
 </script>
 

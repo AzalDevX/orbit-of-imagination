@@ -1,7 +1,6 @@
 <template>
-  <div class="user-card">
+  <!-- <div class="user-card">
     <div class="user-info" v-if="userInformation">
-      <h1>{{ title }}</h1>
       <header class="header-card">
         <img :src="userInformation.avatar_url" alt="Avatar" class="avatar" />
         <div>
@@ -9,14 +8,23 @@
           <p>Seguidores: {{ userInformation.followers }}</p>
         </div>
       </header>
-		  <p>{{ userInformation.bio }}</p>
+		  <p class="bio" v-if="userInformation.bio">{{ userInformation.bio }}</p>
+      <p v-else>No bio yet</p>
 		  <p>Public repos: {{ userInformation.public_repos }}</p>
       <p>Company: {{ userInformation.company }}</p>
-      <p v-if="userInformation.bio">Bio: {{ userInformation.bio }}</p>
-      <p v-else>No bio yet</p>
       <p>{{ userInformation.location }}</p>
     </div>
-	</div>
+	</div> -->
+  <div class="home-view">
+    <img :src="userInformation.avatar_url" alt="Avatar" class="avatar" />
+    <span>I'm 
+      <strong>
+        {{userInformation.name}}
+      </strong>
+    </span>
+    <p class="bio" v-if="userInformation.bio">{{ userInformation.bio }}</p>
+    <p class="bio-error" v-else>No bio yet</p>
+  </div>
   </template>  
 
 <script>
