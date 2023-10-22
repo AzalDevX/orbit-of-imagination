@@ -1,6 +1,18 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
 
 :root{
+  --steel-blue-50: #f3f7fb;
+  --steel-blue-100: #e3ecf6;
+  --steel-blue-200: #cddff0;
+  --steel-blue-300: #aacae6;
+  --steel-blue-400: #82afd8;
+  --steel-blue-500: #6493cd;
+  --steel-blue-600: #4f7abf;
+  --steel-blue-700: #4669af;
+  --steel-blue-800: #3e578f;
+  --steel-blue-900: #364972;
+  --steel-blue-950: #242e47; 
+  
   --color-black: #222;
   --color-white: #fff;
 }
@@ -8,7 +20,7 @@
 body{
   font-family: 'Montserrat', sans-serif;
   margin: 0;
-  background: var(--color-white);
-  color: var(--color-black);
+  background: linear-gradient(to bottom, var(--steel-blue-400), var(--steel-blue-100));
+  color: var(--steel-blue-900);
 }
 
