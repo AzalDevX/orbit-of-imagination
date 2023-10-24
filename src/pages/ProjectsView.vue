@@ -1,16 +1,20 @@
 <template>
-  <h3>Repositorios de {{ capitalizeFirstLetter(username) }}</h3>
-  <div class="repositories" v-if="user_repositories">
-    <div class="repo-card-container" v-for="repo in user_repositories" :key="repo.id">
-      <div class="repo-card">
-        <a @click="swalRepository(repo)">{{ repo.name }}</a>
-        <div class="repo-card-details">
-          <p>Language: {{ repo.language }}</p>
-          <p>Stars: {{ repo.stargazers_count }}</p>
+  <main class="projects-body">
+    <aside class="h3-container">
+      <h3 class="special-title">Repositories</h3>
+    </aside>
+    <div class="repositories" v-if="user_repositories">
+      <div class="repo-card-container" v-for="repo in user_repositories" :key="repo.id">
+        <div @click="swalRepository(repo)" class="repo-card">
+          <div class="repo-card-details">
+            <a >{{ repo.name }}</a>
+            <p>Stars: {{ repo.stargazers_count }}</p>
+        </div>
+        <p>Language: {{ repo.language }}</p>
         </div>
       </div>
     </div>
-  </div>
+  </main>
 </template>
 
 <script>
@@ -40,12 +44,6 @@ export default {
         console.error('Error al cargar datos desde la API', error);
         this.swalError('It seems to be taking a while to load...')
       }
-    },
-    capitalizeFirstLetter(string) {
-      if (typeof string !== "string" || string.length === 0) {
-        return string; // Devuelve la cadena original si no es una cadena válida
-      }
-      return `${string.charAt(0).toUpperCase()}${string.slice(1)}`;
     },
     swalError(msg){
       Swal.fire({
@@ -86,6 +84,8 @@ export default {
             icon: 'success',
             title: 'Redirecting...',
             showConfirmButton: false,
+            color: '#4f7abf', //--steel-blue-600
+            background: '#364972', //--steel-blue-900
             timer: 750
           }).then(() => {
             window.open(repo.html_url, '_blank');
