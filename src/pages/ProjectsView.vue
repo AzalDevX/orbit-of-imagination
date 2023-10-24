@@ -34,7 +34,7 @@ export default {
     async fetchDataFromAPI() {
       try {
         const repositoriesRequest = await axios.get(`https://api.github.com/users/${this.username}/repos`);
-        this.user_repositories = repositoriesRequest.data;
+        this.user_repositories = repositoriesRequest.data.filter(repo => repo.name.toLowerCase() != config.gh.account.toLowerCase());
         console.log(this.user_repositories);
       } catch (error) {
         console.error('Error al cargar datos desde la API', error);

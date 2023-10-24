@@ -12,9 +12,9 @@
 	font-size: 7.5rem;
 	font-weight: lighter;
 	background-image: linear-gradient(to bottom, var(--text-color), var(--steel-blue-700));
-	-webkit-background-clip: text; /* Para navegadores webkit */
+	-webkit-background-clip: text; 
 	background-clip: text;
-	color: transparent; /* Ocultar el color del texto */
+	color: transparent;
   }
 
   .name-error{
@@ -22,7 +22,6 @@
 	font-weight: lighter;
 	color: red;
   }
-
 
   .home-view img {
 	position: absolute;

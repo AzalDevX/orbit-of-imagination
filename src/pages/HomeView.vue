@@ -1,20 +1,4 @@
 <template>
-  <!-- <div class="user-card">
-    <div class="user-info" v-if="user_information">
-      <header class="header-card">
-        <img :src="user_information.avatar_url" alt="Avatar" class="avatar" />
-        <div>
-          <h2>{{ user_information.name }}</h2>
-          <p>Seguidores: {{ user_information.followers }}</p>
-        </div>
-      </header>
-		  <p class="bio" v-if="user_information.bio">{{ user_information.bio }}</p>
-      <p v-else>No bio yet</p>
-		  <p>Public repos: {{ user_information.public_repos }}</p>
-      <p>Company: {{ user_information.company }}</p>
-      <p>{{ user_information.location }}</p>
-    </div>
-	</div> -->
   <div class="home-view">
     <img :src="user_information.avatar_url" alt="Avatar" class="avatar" />
     <span v-if="user_information.name" class="name">I'm 

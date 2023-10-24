@@ -10,3 +10,8 @@ import './styles/App.css'
   <Footer />
 </template>
 
+<!-- 
+  README:
+    Please, if you use this template, do not remove the footer to support me. 
+  It has cost me my work, and you are very supportive. Thank you 💖🫶
+  -->

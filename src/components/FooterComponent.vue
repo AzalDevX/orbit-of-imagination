@@ -1,7 +1,17 @@
 <template>
-    <article class="footer-body">
-      <a :href="github_link" target="_blank">Github<img src="../assets/icons/external-link.svg" alt="Github link"></a>
-    </article>
+    <footer class="footer-body">
+      <aside>
+        <p class="small-text">
+          Simple VUE portfolio template, that will automatically 
+          sync <br> with your github public data and show the 
+          information in here
+        </p>
+      </aside>
+      <article>
+        <span>© 2023 | Designed with 🪐 by</span>
+        <a :href="github_link" target="_blank"> AzalDev</a>
+      </article>
+    </footer>
 </template>  
   
   <script>

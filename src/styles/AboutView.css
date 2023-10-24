@@ -1,0 +1,25 @@
+.abme-body {
+    width: 100vw;
+    height: 100vh; 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .h1-container {
+    position: absolute;
+    top: 50%; 
+    transform: translateY(-50%); 
+    right: 0; 
+  }
+  
+  .abme-body h1 {
+    color: var(--steel-blue-950);
+    transform: rotate(90deg);
+    font-size: 7rem;
+    text-shadow: 1px 3px 5px var(--steel-blue-900)
+  
+  }
+  
+  

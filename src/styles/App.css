@@ -17,10 +17,6 @@
   --color-white: #fff;
 
   --text-color: var(--steel-blue-400);
-
-  --cursor-pointer: url('/src/assets/vision_cursor/PNG/Pointer/pointer64.png');
-  --cursor-link: url('/src/assets/vision_cursor/PNG/Link/link64.png');
-
 }
 
 body{

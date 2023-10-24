@@ -1,6 +1,7 @@
 <template>
     <nav class="menu">
         <h2>{{ config.web.name }}</h2>
+        
         <RouterLink to="/">Home</RouterLink>
         <RouterLink to="/about">About</RouterLink>
         <RouterLink to="/projects">Projects</RouterLink>
