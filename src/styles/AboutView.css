@@ -1,6 +1,6 @@
 .abme-body {
     width: 100vw;
-    height: 100vh; 
+    /* height: 100vh;  */
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -12,14 +12,57 @@
     top: 50%; 
     transform: translateY(-50%); 
     right: 0; 
+    z-index: -1;
   }
   
-  .abme-body h1 {
+  .special-title {
     color: var(--steel-blue-950);
     transform: rotate(90deg);
     font-size: 7rem;
     text-shadow: 1px 3px 5px var(--steel-blue-900)
   
+  }
+
+  .abme-content {
+    max-width: 60vw;
+    font-size: .9rem;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 12;
+}
+
+
+  .abme-content a{
+    text-decoration: none;
+    color: var(--steel-blue-700);
+  }
+
+  .abme-content a:hover{
+    text-decoration: underline;
+    color: var(--steel-blue-800);
+  }
+
+  .abme-content img{
+    width: 20%;
+  }
+
+  #more-button{
+    padding: 1%;
+    margin: 5%;
+    background-color: var(--steel-blue-700);
+    text-decoration: none;
+    color: var(--steel-blue-400);
+    border-radius: 5px;
+    transition: .2s;
+  }
+
+  #more-button:hover{
+    background-color: var(--steel-blue-600);
+    color: var(--steel-blue-300);
+    border-radius: 10px;
+    transition: .25s;
+    transform: scale(1.1);
   }
   
   

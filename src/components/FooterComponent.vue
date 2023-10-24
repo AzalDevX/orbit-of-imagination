@@ -1,7 +1,7 @@
 <template>
     <footer class="footer-body">
       <aside>
-        <p class="small-text">
+        <p>
           Simple VUE portfolio template, that will automatically 
           sync <br> with your github public data and show the 
           information in here
@@ -15,15 +15,12 @@
 </template>  
   
   <script>
-  import config from '../config/config.js'
   import '../styles/FooterComponent.css'
   
   export default {
     created() {},
     data() {
-      return { github_link: `https://github.com/${config.gh.account}` };
-    },
-    methods: {},
-    computed: {},
+      return { github_link: 'https://github.com/LaloruHub' };
+    }
   };
   </script>

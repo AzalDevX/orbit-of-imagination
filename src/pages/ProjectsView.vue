@@ -18,6 +18,7 @@
 import config from '../config/config.js'
 import '../styles/ProjectsView.css'
 import axios from 'axios'
+import Swal from 'sweetalert2';
 
 
 export default {
@@ -38,6 +39,7 @@ export default {
         console.log(this.user_repositories);
       } catch (error) {
         console.error('Error al cargar datos desde la API', error);
+        swalError('It seems to be taking a while to load...')
       }
     },
     capitalizeFirstLetter(string) {
@@ -45,6 +47,26 @@ export default {
         return string; // Devuelve la cadena original si no es una cadena válida
       }
       return `${string.charAt(0).toUpperCase()}${string.slice(1)}`;
+    },
+    swalError(msg){
+      Swal.fire({
+        icon: 'error',
+        title: 'Oops...',
+        text: msg,
+        showCancelButton: true,
+        confirmButtonColor: '#6493cd', //--steel-blue-500
+        cancelButtonColor: '#364972', //--steel-blue-800
+        confirmButtonText: 'Try again',
+        cancelButtonText: 'Go back',
+        color: '#364972', //--steel-blue-900
+        background: '#4f7abf' //--steel-blue-600
+      }).then(res => {
+        if(res.isConfirmed){
+          location.reload();
+        } else{
+          this.$router.push('/');
+        }
+      })
     }
   },
   computed: {
