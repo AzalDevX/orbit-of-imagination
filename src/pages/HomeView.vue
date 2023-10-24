@@ -1,29 +1,29 @@
 <template>
   <!-- <div class="user-card">
-    <div class="user-info" v-if="userInformation">
+    <div class="user-info" v-if="user_information">
       <header class="header-card">
-        <img :src="userInformation.avatar_url" alt="Avatar" class="avatar" />
+        <img :src="user_information.avatar_url" alt="Avatar" class="avatar" />
         <div>
-          <h2>{{ userInformation.name }}</h2>
-          <p>Seguidores: {{ userInformation.followers }}</p>
+          <h2>{{ user_information.name }}</h2>
+          <p>Seguidores: {{ user_information.followers }}</p>
         </div>
       </header>
-		  <p class="bio" v-if="userInformation.bio">{{ userInformation.bio }}</p>
+		  <p class="bio" v-if="user_information.bio">{{ user_information.bio }}</p>
       <p v-else>No bio yet</p>
-		  <p>Public repos: {{ userInformation.public_repos }}</p>
-      <p>Company: {{ userInformation.company }}</p>
-      <p>{{ userInformation.location }}</p>
+		  <p>Public repos: {{ user_information.public_repos }}</p>
+      <p>Company: {{ user_information.company }}</p>
+      <p>{{ user_information.location }}</p>
     </div>
 	</div> -->
   <div class="home-view">
-    <img :src="userInformation.avatar_url" alt="Avatar" class="avatar" />
-    <span v-if="userInformation.name" class="name">I'm 
+    <img :src="user_information.avatar_url" alt="Avatar" class="avatar" />
+    <span v-if="user_information.name" class="name">I'm 
       <strong>
-        {{userInformation.name}}
+        {{user_information.name}}
       </strong>
     </span>
     <span v-else class="name-error"><strong>No name yet</strong></span>
-    <p class="bio" v-if="userInformation.bio">{{ userInformation.bio }}</p>
+    <p class="bio" v-if="user_information.bio">{{ user_information.bio }}</p>
     <p class="bio-error" v-else>No bio yet</p>
   </div>
   </template>  
@@ -39,7 +39,7 @@ export default {
   },
   data() {
     return {
-      userInformation: null,
+      user_information: null,
       title: config.web.name
     };
   },
@@ -47,9 +47,9 @@ export default {
     async fetchDataFromAPI() {
       try {
         const informationRequest = await axios.get(`https://api.github.com/users/${config.gh.account}`); 
-        this.userInformation = informationRequest.data;
+        this.user_information = informationRequest.data;
         console.clear();
-        console.log(this.userInformation);
+        console.log(this.user_information);
       } catch (error) {
         console.error('Error al cargar datos desde la API', error);
       }

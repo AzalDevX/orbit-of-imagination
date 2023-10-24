@@ -1,7 +1,7 @@
 <template>
   <h3>Repositorios de {{ capitalizeFirstLetter(username) }}</h3>
-  <div class="repositories" v-if="userRepositories">
-    <div class="repo-card-container" v-for="repo in userRepositories" :key="repo.id">
+  <div class="repositories" v-if="user_repositories">
+    <div class="repo-card-container" v-for="repo in user_repositories" :key="repo.id">
       <div class="repo-card">
         <a :href="repo.html_url" target="_blank">{{ repo.name }}</a>
         <p>{{ repo.description }}</p>
@@ -27,15 +27,15 @@ export default {
   data() {
     return {
       username: config.gh.account,
-      userRepositories: null
+      user_repositories: null
     };
   },
   methods: {
     async fetchDataFromAPI() {
       try {
         const repositoriesRequest = await axios.get(`https://api.github.com/users/${this.username}/repos`);
-        this.userRepositories = repositoriesRequest.data;
-        console.log(this.userRepositories);
+        this.user_repositories = repositoriesRequest.data;
+        console.log(this.user_repositories);
       } catch (error) {
         console.error('Error al cargar datos desde la API', error);
       }

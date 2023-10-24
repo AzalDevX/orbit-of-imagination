@@ -11,7 +11,7 @@
   export default {
     created() {},
     data() {
-      return { github_link: `https://github.com/${$config.gh.account}` };
+      return { github_link: `https://github.com/${config.gh.account}` };
     },
     methods: {},
     computed: {},
