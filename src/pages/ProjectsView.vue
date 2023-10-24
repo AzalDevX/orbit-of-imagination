@@ -3,8 +3,7 @@
   <div class="repositories" v-if="user_repositories">
     <div class="repo-card-container" v-for="repo in user_repositories" :key="repo.id">
       <div class="repo-card">
-        <a :href="repo.html_url" target="_blank">{{ repo.name }}</a>
-        <p>{{ repo.description }}</p>
+        <a @click="swalRepository(repo)">{{ repo.name }}</a>
         <div class="repo-card-details">
           <p>Language: {{ repo.language }}</p>
           <p>Stars: {{ repo.stargazers_count }}</p>
@@ -39,7 +38,7 @@ export default {
         console.log(this.user_repositories);
       } catch (error) {
         console.error('Error al cargar datos desde la API', error);
-        swalError('It seems to be taking a while to load...')
+        this.swalError('It seems to be taking a while to load...')
       }
     },
     capitalizeFirstLetter(string) {
@@ -67,7 +66,35 @@ export default {
           this.$router.push('/');
         }
       })
+    },
+    swalRepository(repo) {
+      Swal.fire({
+        icon: 'info',
+        title: repo.name,
+        text: repo.description,
+        showCancelButton: true,
+        confirmButtonColor: '#6493cd', //--steel-blue-500
+        confirmButtonText: 'Keep here',
+        cancelButtonColor: '#364972', //--steel-blue-800
+        cancelButtonText: 'Watch more...',
+        color: '#364972', //--steel-blue-900
+        background: '#4f7abf' //--steel-blue-600
+      }).then(res => {
+        if (!res.isConfirmed) {
+          Swal.fire({
+            position: 'top-end',
+            icon: 'success',
+            title: 'Redirecting...',
+            showConfirmButton: false,
+            timer: 750
+          }).then(() => {
+            window.open(repo.html_url, '_blank');
+          });
     }
+  });
+}
+
+
   },
   computed: {
   },
