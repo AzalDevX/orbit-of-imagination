@@ -15,12 +15,24 @@
   
   --color-black: #222;
   --color-white: #fff;
+
+  --text-color: var(--steel-blue-400);
+
+  --cursor-pointer: url('/src/assets/vision_cursor/PNG/Pointer/pointer64.png');
+  --cursor-link: url('/src/assets/vision_cursor/PNG/Link/link64.png');
+
 }
 
 body{
   font-family: 'Montserrat', sans-serif;
   margin: 0;
-  background: linear-gradient(to bottom, var(--steel-blue-400), var(--steel-blue-100));
-  color: var(--steel-blue-900);
+  color: var(--text-color);
+  background: var(--steel-blue-950 );
+  overflow: hidden;
+}
+
+::selection{
+  background-color: var(--steel-blue-500);
+  color: var(--steel-blue-700);
 }
 

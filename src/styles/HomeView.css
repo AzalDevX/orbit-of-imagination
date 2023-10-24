@@ -5,11 +5,24 @@
 	align-items: center;
 	height: 100vh;
 	position: relative;
+	
   }
   
-  .home-view span {
-	font-size: 3rem;
+  .name {
+	font-size: 7.5rem;
+	font-weight: lighter;
+	background-image: linear-gradient(to bottom, var(--text-color), var(--steel-blue-700));
+	-webkit-background-clip: text; /* Para navegadores webkit */
+	background-clip: text;
+	color: transparent; /* Ocultar el color del texto */
   }
+
+  .name-error{
+	font-size: 7.5rem;
+	font-weight: lighter;
+	color: red;
+  }
+
 
   .home-view img {
 	position: absolute;
@@ -27,6 +40,14 @@
   }
 
   .bio {
-	width: 20%;
 	font-weight: lighter;
+	font-size: 1.1rem;
+	text-shadow: .5px .5px 1px var(--steel-blue-700);
+  }
+
+  .bio-error{
+	font-weight: lighter;
+	font-size: 1.1rem;
+	text-shadow: .5px .5px 1px rgba(255,255,255,.3);
+	color: red;
   }

@@ -1,0 +1,9 @@
+.footer-body{
+    background-color: var(--color-white);
+    opacity: .1;
+    position: absolute;
+    bottom: 0;
+    height: 10vh;
+    width: 100vw;
+    border-radius: 10px 10px 0 0;
+}

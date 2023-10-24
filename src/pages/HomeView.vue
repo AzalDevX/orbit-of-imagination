@@ -17,11 +17,12 @@
 	</div> -->
   <div class="home-view">
     <img :src="userInformation.avatar_url" alt="Avatar" class="avatar" />
-    <span>I'm 
+    <span v-if="userInformation.name" class="name">I'm 
       <strong>
         {{userInformation.name}}
       </strong>
     </span>
+    <span v-else class="name-error"><strong>No name yet</strong></span>
     <p class="bio" v-if="userInformation.bio">{{ userInformation.bio }}</p>
     <p class="bio-error" v-else>No bio yet</p>
   </div>
