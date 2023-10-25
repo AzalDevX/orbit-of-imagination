@@ -3,8 +3,9 @@
       <article class="h1-container">
         <h1 class="special-title">About Me</h1>
     </article>
-    <div class="abme-content" v-html="html_content"></div>
-    <a id="more-button" :href="github_link" target="__blank">Wanna view more about me? Click me!</a>
+    <div v-if="html_content" class="abme-content" v-html="html_content"></div>
+    <div v-else>No content</div>
+    <a v-if="html_content" id="more-button" :href="github_link" target="__blank">Wanna view more about me? Click here!</a>
     </main>
   </template>
   
@@ -38,7 +39,13 @@
     },
     computed: {
         html_content(){
-            return marked(this.user_readme)
+          let res = '';
+          try{
+            res = marked(this.user_readme)
+          }catch{
+            res = undefined
+          }
+          return res
         }
     }
   };

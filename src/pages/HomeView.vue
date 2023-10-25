@@ -33,8 +33,6 @@ export default {
       try {
         const informationRequest = await axios.get(`https://api.github.com/users/${config.gh.account}`); 
         this.user_information = informationRequest.data;
-        console.clear();
-        console.log(this.user_information);
       } catch (error) {
         console.error('Error al cargar datos desde la API', error);
       }

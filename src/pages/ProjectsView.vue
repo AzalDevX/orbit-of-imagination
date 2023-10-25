@@ -1,8 +1,10 @@
 <template>
   <main class="projects-body">
+
     <header class="h3-container">
       <h3 class="special-title">Repositories</h3>
     </header>
+
     <article class="repositories" v-if="user_repositories">
       <div class="repo-card-container" v-for="repo in user_repositories" :key="repo.id">
         <div class="repo-card-wrapper">
@@ -25,6 +27,7 @@
       <h1> {{ this.currentPage }} </h1>
       <a @click="nextPage" :class="{ 'disabled-link': currentPage * itemsPerPage >= totalItems }"> > </a>
     </aside>
+
   </main>
 </template>
 
@@ -59,14 +62,10 @@ export default {
     const url = `https://api.github.com/users/${this.username}/repos?page=${page}&per_page=${perPage}`;
     const repositoriesRequest = await axios.get(url);
 
-    // Actualiza user_repositories con los repositorios de la página actual
     this.user_repositories = repositoriesRequest.data;
-
-    // Realiza una nueva solicitud para obtener el número total de repositorios del usuario
     const totalReposRequest = await axios.get(`https://api.github.com/users/${this.username}`);
-    this.totalItems = totalReposRequest.data.public_repos; // Usa el número total de repositorios
-
-    console.log(this.user_repositories);
+    this.totalItems = totalReposRequest.data.public_repos; 
+    
   } catch (error) {
     console.error('Error al cargar datos desde la API', error);
     this.swalError('It seems to be taking a while to load...');
