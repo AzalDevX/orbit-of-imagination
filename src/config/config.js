@@ -5,7 +5,7 @@ export default {
     },
     gh: {
       account: "LaloruHub",
-    //   repos_per_page: 10,
+      repos_per_page: 4,
     },
   };
   

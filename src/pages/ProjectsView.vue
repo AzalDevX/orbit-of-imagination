@@ -1,9 +1,9 @@
 <template>
   <main class="projects-body">
-    <aside class="h3-container">
+    <header class="h3-container">
       <h3 class="special-title">Repositories</h3>
-    </aside>
-    <div class="repositories" v-if="user_repositories">
+    </header>
+    <article class="repositories" v-if="user_repositories">
       <div class="repo-card-container" v-for="repo in user_repositories" :key="repo.id">
         <div @click="swalRepository(repo)" class="repo-card">
           <div class="repo-card-details">
@@ -13,7 +13,11 @@
         <p>Language: {{ repo.language }}</p>
         </div>
       </div>
-    </div>
+    </article>
+    <aside class="controls">
+      <button @click="previousPage" :disabled="currentPage === 1">Anterior</button>
+      <button @click="nextPage" :disabled="currentPage * itemsPerPage >= totalItems">Siguiente</button>
+    </aside>
   </main>
 </template>
 
@@ -31,20 +35,50 @@ export default {
   data() {
     return {
       username: config.gh.account,
-      user_repositories: null
+      user_repositories: [],
+      currentPage: 1,
+      itemsPerPage: config.gh.repos_per_page,
+      totalItems: 0,
     };
   },
   methods: {
     async fetchDataFromAPI() {
-      try {
-        const repositoriesRequest = await axios.get(`https://api.github.com/users/${this.username}/repos`);
-        this.user_repositories = repositoriesRequest.data.filter(repo => repo.name.toLowerCase() != config.gh.account.toLowerCase());
-        console.log(this.user_repositories);
-      } catch (error) {
-        console.error('Error al cargar datos desde la API', error);
-        this.swalError('It seems to be taking a while to load...')
-      }
-    },
+  try {
+    const page = this.currentPage;
+    const perPage = this.itemsPerPage;
+    const startIndex = (page - 1) * perPage;
+    const endIndex = startIndex + perPage;
+
+    const url = `https://api.github.com/users/${this.username}/repos?page=${page}&per_page=${perPage}`;
+    const repositoriesRequest = await axios.get(url);
+
+    // Actualiza user_repositories con los repositorios de la página actual
+    this.user_repositories = repositoriesRequest.data;
+
+    // Realiza una nueva solicitud para obtener el número total de repositorios del usuario
+    const totalReposRequest = await axios.get(`https://api.github.com/users/${this.username}`);
+    this.totalItems = totalReposRequest.data.public_repos; // Usa el número total de repositorios
+
+    console.log(this.user_repositories);
+  } catch (error) {
+    console.error('Error al cargar datos desde la API', error);
+    this.swalError('It seems to be taking a while to load...');
+  }
+},
+
+previousPage() {
+    if (this.currentPage > 1) {
+      this.currentPage--;
+      this.fetchDataFromAPI();
+    }
+  },
+  nextPage() {
+  if (this.currentPage * this.itemsPerPage < this.totalItems) {
+    this.currentPage++;
+    this.fetchDataFromAPI();
+  }
+},
+
     swalError(msg){
       Swal.fire({
         icon: 'error',

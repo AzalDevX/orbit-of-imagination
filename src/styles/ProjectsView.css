@@ -73,3 +73,18 @@
 	top: 0;
 	left: 0;
   }
+
+  .controls{
+	display: flex;
+	gap: 1rem;
+  }
+
+  .controls button{
+	color: var(--steel-blue-900);
+	background-color: var(--steel-blue-600);
+	border: none;
+	font-weight:bold;
+	font-size: 1rem;
+	cursor:pointer;
+	width: 150%;
+  }
