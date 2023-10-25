@@ -22,6 +22,7 @@
 
     <aside class="controls">
       <a @click="previousPage" :class="{ 'disabled-link': currentPage === 1 }"> &lt; </a>
+      <h1> {{ this.currentPage }} </h1>
       <a @click="nextPage" :class="{ 'disabled-link': currentPage * itemsPerPage >= totalItems }"> > </a>
     </aside>
   </main>

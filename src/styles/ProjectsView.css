@@ -99,5 +99,10 @@
 	cursor: not-allowed !important;
 	user-select: none;
   }
+
+  .controls h1{
+	font-size: 3rem;
+	line-height: 1rem;
+  }
   
   
