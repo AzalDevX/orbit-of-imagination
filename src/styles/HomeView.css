@@ -17,6 +17,13 @@
 	color: transparent;
   }
 
+  .name strong:hover{
+	background-image: linear-gradient(to bottom, var(--steel-blue-500), var(--steel-blue-700));
+	-webkit-background-clip: text; 
+	background-clip: text;
+	color: transparent;
+  }
+
   .name-error{
 	font-size: 7.5rem;
 	font-weight: lighter;

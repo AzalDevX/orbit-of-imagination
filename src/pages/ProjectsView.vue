@@ -5,18 +5,24 @@
     </header>
     <article class="repositories" v-if="user_repositories">
       <div class="repo-card-container" v-for="repo in user_repositories" :key="repo.id">
-        <div @click="swalRepository(repo)" class="repo-card">
-          <div class="repo-card-details">
-            <a >{{ repo.name }}</a>
-            <p>Stars: {{ repo.stargazers_count }}</p>
-        </div>
-        <p>Language: {{ repo.language }}</p>
+        <div class="repo-card-wrapper">
+          <div @click="swalRepository(repo)" class="repo-card">
+            <div class="repo-card-details">
+              <a>{{ repo.name }}</a>
+              <p>
+                <img src="../assets/star.svg" alt="Star"> 
+                {{ repo.stargazers_count }}
+              </p>
+            </div>
+            <p>{{ repo.language }}</p>
+          </div>
         </div>
       </div>
     </article>
+
     <aside class="controls">
-      <button @click="previousPage" :disabled="currentPage === 1">Anterior</button>
-      <button @click="nextPage" :disabled="currentPage * itemsPerPage >= totalItems">Siguiente</button>
+      <a @click="previousPage" :class="{ 'disabled-link': currentPage === 1 }"> &lt; </a>
+      <a @click="nextPage" :class="{ 'disabled-link': currentPage * itemsPerPage >= totalItems }"> > </a>
     </aside>
   </main>
 </template>
@@ -112,7 +118,8 @@ previousPage() {
         color: '#364972', //--steel-blue-900
         background: '#4f7abf' //--steel-blue-600
       }).then(res => {
-        if (!res.isConfirmed) {
+        if (res.isDismissed) {
+          //Go to github
           Swal.fire({
             position: 'top-end',
             icon: 'success',
@@ -127,8 +134,6 @@ previousPage() {
     }
   });
 }
-
-
   },
   computed: {
   },

@@ -1,11 +1,11 @@
 <template>
   <div class="home-view">
     <img :src="user_information.avatar_url" alt="Avatar" class="avatar" />
-    <span v-if="user_information.name" class="name">I'm 
+    <a v-if="user_information.name" class="name" :href="github_link" target="_blank">I'm 
       <strong>
         {{user_information.name}}
       </strong>
-    </span>
+    </a>
     <span v-else class="name-error"><strong>No name yet</strong></span>
     <p class="bio" v-if="user_information.bio">{{ user_information.bio }}</p>
     <p class="bio-error" v-else>No bio yet</p>
@@ -24,7 +24,8 @@ export default {
   data() {
     return {
       user_information: null,
-      title: config.web.name
+      title: config.web.name,
+      github_link: `https://github.com/${config.gh.account}`
     };
   },
   methods: {

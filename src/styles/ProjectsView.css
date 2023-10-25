@@ -1,27 +1,23 @@
 .repositories {
 	display: flex;
 	flex-wrap: wrap;
-	justify-content: space-around;
-	margin: 0 10%;
+	flex-direction: row;
+	justify-content: start;
+	gap: 3rem;
+	width: 50vw;
   }
-  
-  .repo-card-container {
-	width: 100%;
-	max-width: 400px;
-	margin-bottom: 20px;
-}
 
 .repo-card {
-	  cursor:pointer !important;
-	background-color: var(--color-white);
-	/* color: var(--color-black); */
-	border: 1px solid var(--color-white);
+	cursor:pointer !important;
+	background-color: var(--steel-blue-100);
 	border-radius: 5px;
 	padding: 20px;
-	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+	box-shadow: 0 2px 4px rgba(0, 0, 0, .1);
 	transition: .25s;
+	height: 10vh;
+	width: 20vw;
   }
-
+  
   .repo-card:hover {
 	transform: scale(1.1);
 	transition: .3s;
@@ -38,14 +34,13 @@
 	margin: 10px 0;
   }
   
-  .repo-card-details {
+  .repo-card-details, .repo-card-details p {
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
   }
 
   .repo-card-container:hover {
-	/* Change the background color to white with 10% opacity on hover */
 	background-color: rgba(255, 255, 255, 0.1);
   }
 
@@ -54,8 +49,8 @@
 	margin-top: 5%;
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
+	justify-content: start;
   }
   
   .h3-container {
@@ -76,15 +71,33 @@
 
   .controls{
 	display: flex;
-	gap: 1rem;
+	width: 20vw;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: space-between;
+	position: absolute;
+	bottom: 25vh;
   }
 
-  .controls button{
-	color: var(--steel-blue-900);
-	background-color: var(--steel-blue-600);
-	border: none;
-	font-weight:bold;
-	font-size: 1rem;
-	cursor:pointer;
-	width: 150%;
+  .controls a{
+	color: var(--steel-blue-500);
+	border: 3px solid var(--steel-blue-500);
+	font-size: 5rem;
+	cursor: pointer;
+	border-radius: 10px;
+	padding: 1%;
   }
+
+  .controls a.disabled-link {
+	color: var(--steel-blue-800);
+	border: 3px solid var(--steel-blue-800);
+	text-decoration: none;
+	user-select: none;
+  }
+  
+  .controls a.disabled-link:hover {
+	cursor: not-allowed !important;
+	user-select: none;
+  }
+  
+  
