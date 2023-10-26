@@ -1,8 +1,33 @@
+/* Mobile */
+@media screen and (max-width: 1024px) {
+	.projects-body{
+		justify-content: center;
+	}
+	.repositories{
+		justify-content: flex-end;
+	}
+
+	.repo-card{
+		width: 40vw;
+	}
+  }
+  
+  /* Computer */
+  @media screen and (min-width: 1024px) {
+	.repositories{
+		justify-content: start;
+
+	}
+
+	.repo-card{
+		width: 20vw;
+	  }
+  }
+
 .repositories {
 	display: flex;
 	flex-wrap: wrap;
 	flex-direction: row;
-	justify-content: start;
 	gap: 3rem;
 	width: 50vw;
   }
@@ -15,7 +40,6 @@
 	box-shadow: 0 2px 4px rgba(0, 0, 0, .1);
 	transition: .25s;
 	height: 10vh;
-	width: 20vw;
   }
   
   .repo-card:hover {

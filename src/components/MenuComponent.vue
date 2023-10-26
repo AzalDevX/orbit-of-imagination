@@ -1,11 +1,15 @@
 <template>
+  <header id="menu-content">
+
+    <h2>{{ config.web.name }}</h2>
+
     <nav class="menu">
-        <h2>{{ config.web.name }}</h2>
-        
-        <RouterLink to="/">Home</RouterLink>
-        <RouterLink to="/about">About</RouterLink>
-        <RouterLink to="/projects">Projects</RouterLink>
+      <RouterLink to="/">Home</RouterLink>
+      <RouterLink to="/about">About</RouterLink>
+      <RouterLink to="/projects">Projects</RouterLink>
     </nav>
+  </header>
+  
 </template>
 
 <script>

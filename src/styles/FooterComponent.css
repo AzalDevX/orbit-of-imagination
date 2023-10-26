@@ -1,3 +1,19 @@
+/* Mobile */
+@media screen and (max-width: 1024px) {
+    .footer-body{
+        padding-top: 1%;
+        justify-content: space-evenly;
+    }
+}
+
+/* Computer */
+@media screen and (min-width: 1024px) {
+    .footer-body{
+        font-size: .8rem;
+        justify-content: space-around;
+    }
+}
+
 .footer-body {
     background-color: rgba(255, 255, 255, 0.1);
     position: absolute;
@@ -7,11 +23,8 @@
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: space-around;
-    font-size: .8rem;
+    font-size: .6rem;
 }
-
-
 
 .footer-body article{
     display: flex;
@@ -39,4 +52,3 @@
     color: white;
     width: 50%;
 }
-

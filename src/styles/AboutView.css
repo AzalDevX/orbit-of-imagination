@@ -1,6 +1,33 @@
+/* Mobile */
+@media screen and (max-width: 1024px) {
+  .abme-content {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 20;
+  }
+
+  .abme-content img{
+    width: 50%;
+  }
+}
+
+/* Computer */
+@media screen and (min-width: 1024px) {
+  .abme-content {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 12;
+  }
+
+  .abme-content img{
+    width: 20%;
+  }
+}
+
 .abme-body {
     width: 100vw;
-    /* height: 100vh;  */
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -25,10 +52,6 @@
   .abme-content {
     max-width: 60vw;
     font-size: .9rem;
-    overflow: hidden;
-    display: -webkit-box;
-    -webkit-box-orient: vertical;
-    -webkit-line-clamp: 12;
 }
 
 
@@ -42,9 +65,6 @@
     color: var(--steel-blue-800);
   }
 
-  .abme-content img{
-    width: 20%;
-  }
 
   #more-button{
     padding: 1%;

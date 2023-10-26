@@ -2,9 +2,11 @@
     <footer class="footer-body">
       <aside>
         <p>
-          Simple VUE portfolio template, that will automatically 
-          sync <br> with your github public data and show the 
-          information in here
+          Simple VUE portfolio template,<br v-if="getScreenResolution() < computerScreen"> 
+          that will automatically sync <br v-if="getScreenResolution() > computerScreen"> 
+          with <br v-if="getScreenResolution() < computerScreen">
+          your github public data <br v-if="getScreenResolution() < computerScreen">
+          and show the information in here
         </p>
       </aside>
       <article>
@@ -14,13 +16,22 @@
     </footer>
 </template>  
   
-  <script>
+<script>
   import '../styles/FooterComponent.css'
+  import config from '../config/config.js'
   
   export default {
     created() {},
     data() {
-      return { github_link: 'https://github.com/LaloruHub' };
+      return { 
+        github_link: 'https://github.com/LaloruHub',
+        computerScreen: config.computer.screen
+      };
+    },
+    methods: {
+      getScreenResolution() {
+        return window.innerWidth;
+      },
     }
   };
-  </script>
+</script>

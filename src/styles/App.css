@@ -11,7 +11,7 @@
   --steel-blue-700: #4669af;
   --steel-blue-800: #3e578f;
   --steel-blue-900: #364972;
-  --steel-blue-950: #242e47; 
+  --steel-blue-950: #242e47;
   
   --color-black: #222;
   --color-white: #fff;
@@ -19,12 +19,25 @@
   --text-color: var(--steel-blue-400);
 }
 
+@media screen and (max-width: 1024px) {
+  body{
+    overflow-x: hidden !important;
+    overflow-y: scroll;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  body{
+    overflow: hidden;
+  }
+}
+
 body{
   font-family: 'Montserrat', sans-serif;
   margin: 0;
   color: var(--text-color);
   background: var(--steel-blue-950 );
-  overflow: hidden;
+  /* overflow: hidden; */
 }
 
 ::selection{

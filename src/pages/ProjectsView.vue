@@ -21,8 +21,8 @@
         </div>
       </div>
     </article>
-
-    <aside class="controls">
+    
+    <aside v-if="getScreenResolution() > computerScreen" class="controls">
       <a @click="previousPage" :class="{ 'disabled-link': currentPage === 1 }"> &lt; </a>
       <h1> {{ this.currentPage }} </h1>
       <a @click="nextPage" :class="{ 'disabled-link': currentPage * itemsPerPage >= totalItems }"> > </a>
@@ -42,6 +42,9 @@ export default {
   created() {
     this.fetchDataFromAPI();
   },
+  mounted(){
+    window.addEventListener('resize', this.getScreenResolution);
+  },
   data() {
     return {
       username: config.gh.account,
@@ -49,42 +52,48 @@ export default {
       currentPage: 1,
       itemsPerPage: config.gh.repos_per_page,
       totalItems: 0,
+      computerScreen: config.computer.screen
     };
   },
   methods: {
     async fetchDataFromAPI() {
-  try {
-    const page = this.currentPage;
-    const perPage = this.itemsPerPage;
-    const startIndex = (page - 1) * perPage;
-    const endIndex = startIndex + perPage;
+      try {
+        let url = `https://api.github.com/users/${this.username}/repos`
+        if (this.getScreenResolution() > this.computerScreen){
+          const page = this.currentPage;
+          const perPage = this.itemsPerPage;
+          const startIndex = (page - 1) * perPage;
+          const endIndex = startIndex + perPage;
+          url = `https://api.github.com/users/${this.username}/repos?page=${page}&per_page=${perPage}`;
+        }
+        const repositoriesRequest = await axios.get(url);
 
-    const url = `https://api.github.com/users/${this.username}/repos?page=${page}&per_page=${perPage}`;
-    const repositoriesRequest = await axios.get(url);
+        this.user_repositories = repositoriesRequest.data;
+        if (this.getScreenResolution() > 900){
+          const totalReposRequest = await axios.get(`https://api.github.com/users/${this.username}`);
+          this.totalItems = totalReposRequest.data.public_repos; 
+        }
+      } catch (error) {
+        console.error('Error al cargar datos desde la API', error);
+        this.swalError('It seems to be taking a while to load...');
+      }
+    },
+    getScreenResolution() {
+      return window.innerWidth;
+    },
 
-    this.user_repositories = repositoriesRequest.data;
-    const totalReposRequest = await axios.get(`https://api.github.com/users/${this.username}`);
-    this.totalItems = totalReposRequest.data.public_repos; 
-    
-  } catch (error) {
-    console.error('Error al cargar datos desde la API', error);
-    this.swalError('It seems to be taking a while to load...');
-  }
-},
-
-previousPage() {
-    if (this.currentPage > 1) {
-      this.currentPage--;
-      this.fetchDataFromAPI();
-    }
-  },
-  nextPage() {
-  if (this.currentPage * this.itemsPerPage < this.totalItems) {
-    this.currentPage++;
-    this.fetchDataFromAPI();
-  }
-},
-
+    previousPage() {
+      if (this.currentPage > 1) {
+        this.currentPage--;
+        this.fetchDataFromAPI();
+      }
+    },
+    nextPage() {
+      if (this.currentPage * this.itemsPerPage < this.totalItems) {
+        this.currentPage++;
+        this.fetchDataFromAPI();
+      }
+    },
     swalError(msg){
       Swal.fire({
         icon: 'error',
