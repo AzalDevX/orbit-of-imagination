@@ -1,5 +1,9 @@
 /* Mobile */
 @media screen and (max-width: 1024px) {
+  .abme-content{
+    max-width: 80vw;
+  }
+
    .abme-content img{
     width: 50%;
   }
@@ -12,6 +16,7 @@
 /* Computer */
 @media screen and (min-width: 1024px) {
   .abme-content {
+    max-width: 60vw;
     overflow: hidden;
     display: -webkit-box;
     -webkit-box-orient: vertical;
@@ -49,7 +54,6 @@
   }
 
   .abme-content {
-    max-width: 60vw;
     font-size: .9rem;
 }
 
