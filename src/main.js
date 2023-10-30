@@ -10,10 +10,15 @@ const app = createApp(App)
 app.use(router)
 app.mount('#app')
 
+//Set the title of the web
 document.title = config.web.name
 
+//Set the color palette (11 different color)
 const style = document.documentElement.style;
-
-style.setProperty('--bg1', colors.global['--bg1'])
+for (const key in colors) {
+    if (colors.hasOwnProperty(key)) {
+        style.setProperty(key, colors[key]);
+    }
+}
 
 

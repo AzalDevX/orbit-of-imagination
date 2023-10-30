@@ -72,7 +72,7 @@
   }
   
   .menu a:hover::before {
-    color: var(--steel-blue-700);
+    color: var(--color-tone-700);
   }
   
   .menu a::after {
@@ -82,7 +82,7 @@
     height: 2px;
     bottom: -3px;
     left: 0;
-    background-image: linear-gradient(to right, var(--steel-blue-400), var(--steel-blue-950));
+    background-image: linear-gradient(to right, var(--color-tone-400), var(--color-tone-950));
     transform: scaleX(0);
     transform-origin: bottom left;
     transition: transform .3s ease;

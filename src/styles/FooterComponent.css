@@ -35,7 +35,7 @@
 }
 
 .footer-body a{
-    color: var(--steel-blue-700);
+    color: var(--color-tone-700);
     text-decoration: none;
     display: flex;
     flex-direction: row;
@@ -45,7 +45,7 @@
 }
 
 .footer-body a:hover{
-    color: var(--steel-blue-400);
+    color: var(--color-tone-400);
     text-decoration: underline;
 }
 
