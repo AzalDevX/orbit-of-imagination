@@ -42,7 +42,7 @@ You can see a live example of this template [here](https://azaldev.com).
 ## Screenshots
 
 ![Screenshot 1](https://cdn.discordapp.com/attachments/1168626585562259577/1168626664444538920/image.png?ex=65527364&is=653ffe64&hm=dc20333424ab4778658f4bf03487ef9c294ba0fe83b0d163261896ac4ca5df61&)
-![Screenshot 2]([/screenshots/screenshot2.png](https://media.discordapp.net/attachments/1168626585562259577/1168626722195902555/image.png?ex=65527372&is=653ffe72&hm=f739c0ccdd4e93e98614c810db817b94d0763bf8ae75d2d2e8dc5419e656b54f&=&width=1351&height=671))
+![Screenshot 2](https://media.discordapp.net/attachments/1168626585562259577/1168626722195902555/image.png?ex=65527372&is=653ffe72&hm=f739c0ccdd4e93e98614c810db817b94d0763bf8ae75d2d2e8dc5419e656b54f&=&width=1351&height=671)
 
 ## Contributions
 
