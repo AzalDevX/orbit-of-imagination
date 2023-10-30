@@ -48,6 +48,10 @@ You can see a live example of this template [here](https://azaldev.com).
 
 Contributions are welcome! If you'd like to enhance this template or add new features, feel free to submit a Pull Request.
 
+## License
+
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for more details.
+
 ---
 
 Enjoy using this customizable portfolio template! If you have any questions or suggestions, don't hesitate to contact me.
