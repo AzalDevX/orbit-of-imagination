@@ -11,7 +11,7 @@
       </aside>
       <article>
         <span>© 2023 | Designed with 🪐 by</span>
-        <a :href="github_link" target="_blank"> AzalDev</a>
+        <a :href="github_link" target="_blank"> AzalDevX</a>
       </article>
     </footer>
 </template>  
