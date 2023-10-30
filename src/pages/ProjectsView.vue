@@ -59,6 +59,7 @@ export default {
     async fetchDataFromAPI() {
       try {
         let url = `https://api.github.com/users/${this.username}/repos`
+        
         if (this.getScreenResolution() > this.computerScreen){
           const page = this.currentPage;
           const perPage = this.itemsPerPage;
@@ -66,13 +67,14 @@ export default {
           const endIndex = startIndex + perPage;
           url = `https://api.github.com/users/${this.username}/repos?page=${page}&per_page=${perPage}`;
         }
-        const repositoriesRequest = await axios.get(url);
 
-        this.user_repositories = repositoriesRequest.data;
         if (this.getScreenResolution() > 900){
           const totalReposRequest = await axios.get(`https://api.github.com/users/${this.username}`);
           this.totalItems = totalReposRequest.data.public_repos; 
         }
+
+        const repositoriesRequest = await axios.get(url);
+        this.user_repositories = repositoriesRequest.data;
       } catch (error) {
         console.error('Error al cargar datos desde la API', error);
         this.swalError('It seems to be taking a while to load...');

@@ -2,6 +2,7 @@
 @media screen and (max-width: 1024px) {
     .footer-body{
         padding-top: 1%;
+        position: sticky;
         justify-content: space-evenly;
     }
 }
@@ -10,13 +11,13 @@
 @media screen and (min-width: 1024px) {
     .footer-body{
         font-size: .8rem;
+        position: absolute;
         justify-content: space-around;
     }
 }
 
 .footer-body {
     background-color: rgba(255, 255, 255, 0.1);
-    position: absolute;
     bottom: 0;
     width: 100vw;
     border-radius: 15px 15px 0 0;

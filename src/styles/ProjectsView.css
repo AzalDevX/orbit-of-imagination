@@ -4,33 +4,40 @@
 		justify-content: center;
 	}
 	.repositories{
-		justify-content: flex-end;
+		justify-content: center;
 	}
 
 	.repo-card{
-		width: 40vw;
+		width: 60vw;
 	}
-  }
+}
   
-  /* Computer */
-  @media screen and (min-width: 1024px) {
+/* Computer */
+@media screen and (min-width: 1024px) {
+	.projects-body{
+		width: 80vw;
+	}
+
 	.repositories{
 		justify-content: start;
-
+		width: 50vw;
 	}
 
 	.repo-card{
 		width: 20vw;
-	  }
-  }
+	}
+
+	.h3-container{
+		right: 0; 
+	}
+}
 
 .repositories {
 	display: flex;
 	flex-wrap: wrap;
 	flex-direction: row;
 	gap: 3rem;
-	width: 50vw;
-  }
+}
 
 .repo-card {
 	cursor:pointer !important;
@@ -40,12 +47,12 @@
 	box-shadow: 0 2px 4px rgba(0, 0, 0, .1);
 	transition: .25s;
 	height: 10vh;
-  }
+}
   
-  .repo-card:hover {
+.repo-card:hover {
 	transform: scale(1.1);
 	transition: .3s;
-  }
+}
   
   .repo-card a {
 	font-size: 20px;
@@ -69,7 +76,6 @@
   }
 
   .projects-body {
-    width: 80vw;
 	margin-top: 5%;
     display: flex;
     flex-direction: column;
@@ -81,7 +87,6 @@
     position: absolute;
     top: 50%; 
     transform: translateY(-50%); 
-    right: 0; 
     z-index: -1;
   }
   .special-title {

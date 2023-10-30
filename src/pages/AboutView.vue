@@ -5,7 +5,7 @@
     </article>
     <div v-if="html_content" class="abme-content" v-html="html_content"></div>
     <div v-else>No content</div>
-    <a v-if="html_content" id="more-button" :href="github_link" target="__blank">Wanna view more about me? Click here!</a>
+    <a v-if="getScreenResolution() > computerScreen" id="more-button" :href="github_link" target="__blank">Wanna view more about me? Click here!</a>
     </main>
   </template>
   
@@ -22,7 +22,8 @@
     data() {
       return {
         user_readme: null,
-        github_link: `https://github.com/${config.gh.account}`
+        github_link: `https://github.com/${config.gh.account}`,
+        computerScreen: config.computer.screen
       };
     },
     methods: {
@@ -35,6 +36,9 @@
         } catch (error) {
           console.error('Error al cargar datos desde la API', error);
         }
+      },
+      getScreenResolution() {
+        return window.innerWidth;
       },
     },
     computed: {

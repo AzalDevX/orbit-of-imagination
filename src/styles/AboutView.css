@@ -1,14 +1,11 @@
 /* Mobile */
 @media screen and (max-width: 1024px) {
-  .abme-content {
-    overflow: hidden;
-    display: -webkit-box;
-    -webkit-box-orient: vertical;
-    -webkit-line-clamp: 20;
+   .abme-content img{
+    width: 50%;
   }
 
-  .abme-content img{
-    width: 50%;
+  .special-title {
+    font-size: 7rem;
   }
 }
 
@@ -23,6 +20,9 @@
 
   .abme-content img{
     width: 20%;
+  }
+  .special-title {
+    font-size: 7rem;
   }
 }
 
@@ -45,7 +45,6 @@
   .special-title {
     color: var(--steel-blue-950);
     transform: rotate(90deg);
-    font-size: 7rem;
     text-shadow: 1px 3px 5px var(--steel-blue-900)
   }
 

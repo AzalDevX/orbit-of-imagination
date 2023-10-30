@@ -2,7 +2,11 @@
 @media screen and (max-width: 1024px) {
   #menu-content{
     flex-direction: column;
-    gap: 3em;
+    gap: 2rem;
+  }
+
+  #menu-content h2{
+    font-size: 1.1rem;
   }
 
   .menu{
@@ -21,15 +25,19 @@
   }
 
   #menu-content{
+    width: 100vw;
     justify-content: space-around;
+  }
+
+  #menu-content h2{
+    font-size: 2.5rem;
   }
 }
 
 #menu-content{
-  width: 100vw;
   display: flex;
   align-items: center;
-  padding: 2rem 1rem .5rem 1rem;
+  padding: 1rem .5rem .5rem 1rem;
 }
 
 .menu {
@@ -41,8 +49,7 @@
   }
 
   #menu-content h2{
-    margin: 0 1rem;
-    font-size: 2.5rem;
+
     justify-self: self-start;
   }
   

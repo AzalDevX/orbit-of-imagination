@@ -19,13 +19,14 @@
   --text-color: var(--steel-blue-400);
 }
 
+/* Mobile */
 @media screen and (max-width: 1024px) {
   body{
     overflow-x: hidden !important;
     overflow-y: scroll;
   }
 }
-
+/* Computer */
 @media screen and (min-width: 1024px) {
   body{
     overflow: hidden;

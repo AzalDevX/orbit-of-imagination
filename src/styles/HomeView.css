@@ -3,9 +3,13 @@
 
 	.name{
 		font-size: 2rem;
+		margin-top: 25vh;
 	}
 
-	
+	.home-view{
+		justify-content: start;
+		
+	}
 
 	.home-view img{
 		transform: translate(-50%, -50%) scale(.6);
@@ -26,6 +30,10 @@
 		font-size: 7rem;
 	}
 
+	.home-view{
+		justify-content: center;
+	}
+
 	.home-view img{
 		transform: translate(-50%, -50%) scale(1.5);
 		top: 40%;
@@ -40,10 +48,10 @@
 .home-view {
 	display: flex;
 	flex-direction: column;
-	justify-content: center;
 	align-items: center;
 	height: 100vh;
 	position: relative;
+	overflow: hidden !important;
   }
   
   .name {
