@@ -24,7 +24,7 @@
     created() {},
     data() {
       return { 
-        github_link: 'https://github.com/LaloruHub',
+        github_link: 'https://github.com/AzalDevX',
         computerScreen: config.computer.screen
       };
     },

@@ -7,7 +7,7 @@ export default {
       name: "Orbit of Imagination",
     },
     gh: {
-      account: "LaloruHub",
+      account: "AzalDevX",
       repos_per_page: 4,
     },
   };
