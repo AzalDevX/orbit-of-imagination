@@ -12,6 +12,7 @@ import './styles/App.css'
 
 <!-- 
   README:
+    Me gustan las bananas
     Please, if you use this template, do not remove the footer to support me. 
   It has cost me my work, and you are very supportive. Thank you 💖🫶
   -->
