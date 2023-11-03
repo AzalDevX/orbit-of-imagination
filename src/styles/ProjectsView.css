@@ -11,6 +11,7 @@
 		width: 60vw;
 	}
 }
+
   
 /* Computer */
 @media screen and (min-width: 1024px) {
@@ -29,6 +30,10 @@
 
 	.h3-container{
 		right: 0; 
+	}
+
+	.controls{
+		bottom: 15vh;
 	}
 }
 
@@ -105,7 +110,6 @@
 	justify-content: space-between;
 	align-items: space-between;
 	position: absolute;
-	bottom: 25vh;
   }
 
   .controls a{
