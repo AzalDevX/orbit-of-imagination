@@ -1,14 +1,18 @@
 /* Mobile */
 @media screen and (max-width: 1024px) {
   #menu-content{
+    position: sticky;
+    z-index: 1;
+    top: 0;
     flex-direction: column;
-    gap: 2rem;
+    background-color: var(--color-tone-950);
+    box-shadow: 0 10px 80px var(--color-tone-950);
   }
-
+  
   #menu-content h2{
     font-size: 1.8rem;
   }
-
+  
   .menu{
     width: 100vw;
   }

@@ -2,10 +2,10 @@
     <footer class="footer-body">
       <aside>
         <p>
-          Simple VUE portfolio template,<br v-if="getScreenResolution() < computerScreen"> 
-          that will automatically sync <br v-if="getScreenResolution() > computerScreen"> 
-          with <br v-if="getScreenResolution() < computerScreen">
-          your github public data <br v-if="getScreenResolution() < computerScreen">
+          Simple VUE portfolio template,<br v-if="getScreenResolution < computerScreen"> 
+          that will automatically sync <br v-if="getScreenResolution > computerScreen"> 
+          with <br v-if="getScreenResolution < computerScreen">
+          your github public data <br v-if="getScreenResolution < computerScreen">
           and show the information in here
         </p>
       </aside>
@@ -17,8 +17,9 @@
 </template>  
   
 <script>
-  import '../styles/FooterComponent.css'
-  import config from '../config/config.js'
+  import { getScreenResolution } from '@/utils/globals.js';
+  import '@/styles/FooterComponent.css'
+  import config from '@/config/config.js'
   
   export default {
     created() {},
@@ -28,10 +29,6 @@
         computerScreen: config.computer.screen
       };
     },
-    methods: {
-      getScreenResolution() {
-        return window.innerWidth;
-      },
-    }
+    methods: {}
   };
 </script>

@@ -13,9 +13,9 @@
 </template>
 
 <script>
-import config from '../config/config.js'
+import config from '@/config/config.js'
 import { RouterLink } from 'vue-router'
-import '../styles/MenuComponent.css'
+import '@/styles/MenuComponent.css'
 
 export default {
   data() {

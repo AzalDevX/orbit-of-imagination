@@ -22,7 +22,7 @@
       </div>
     </article>
     
-    <aside v-if="getScreenResolution() > computerScreen" class="controls">
+    <aside v-if="getScreenResolution > computerScreen" class="controls">
       <a @click="previousPage" :class="{ 'disabled-link': currentPage === 1 }"> &lt; </a>
       <h1> {{ this.currentPage }} </h1>
       <a @click="nextPage" :class="{ 'disabled-link': currentPage * itemsPerPage >= totalItems }"> > </a>
@@ -32,9 +32,10 @@
 </template>
 
 <script>
-import config from '../config/config.js'
-import '../styles/ProjectsView.css'
-import axios from 'axios'
+import { getScreenResolution } from '@/utils/globals.js';
+import { fetchUserRepositories } from '@/utils/fetchData';
+import config from '@/config/config.js'
+import '@/styles/ProjectsView.css'
 import Swal from 'sweetalert2';
 
 
@@ -43,7 +44,7 @@ export default {
     this.fetchDataFromAPI();
   },
   mounted(){
-    window.addEventListener('resize', this.getScreenResolution);
+    window.addEventListener('resize', getScreenResolution);
   },
   data() {
     return {
@@ -57,33 +58,16 @@ export default {
   },
   methods: {
     async fetchDataFromAPI() {
-      try {
-        let url = `https://api.github.com/users/${this.username}/repos`
-        
-        if (this.getScreenResolution() > this.computerScreen){
-          const page = this.currentPage;
-          const perPage = this.itemsPerPage;
-          const startIndex = (page - 1) * perPage;
-          const endIndex = startIndex + perPage;
-          url = `https://api.github.com/users/${this.username}/repos?page=${page}&per_page=${perPage}`;
-        }
+      const { user_repositories, totalItems } = await fetchUserRepositories(
+        this.username,
+        this.currentPage,
+        this.itemsPerPage,
+        this.computerScreen
+      );
 
-        if (this.getScreenResolution() > 900){
-          const totalReposRequest = await axios.get(`https://api.github.com/users/${this.username}`);
-          this.totalItems = totalReposRequest.data.public_repos; 
-        }
-
-        const repositoriesRequest = await axios.get(url);
-        this.user_repositories = repositoriesRequest.data;
-      } catch (error) {
-        console.error('Error al cargar datos desde la API', error);
-        this.swalError('It seems to be taking a while to load...');
-      }
+      this.user_repositories = user_repositories;
+      this.totalItems = totalItems;
     },
-    getScreenResolution() {
-      return window.innerWidth;
-    },
-
     previousPage() {
       if (this.currentPage > 1) {
         this.currentPage--;
@@ -102,12 +86,12 @@ export default {
         title: 'Oops...',
         text: msg,
         showCancelButton: true,
-        confirmButtonColor: '#6493cd', //--steel-blue-500
-        cancelButtonColor: '#364972', //--steel-blue-800
+        confirmButtonColor: '#6493cd', //--color-tone-500
+        cancelButtonColor: '#364972', //--color-tone-800
         confirmButtonText: 'Try again',
         cancelButtonText: 'Go back',
-        color: '#364972', //--steel-blue-900
-        background: '#4f7abf' //--steel-blue-600
+        color: '#364972', //--color-tone-900
+        background: '#4f7abf' //--color-tone-600
       }).then(res => {
         if(res.isConfirmed){
           location.reload();
@@ -122,22 +106,22 @@ export default {
         title: repo.name,
         text: repo.description,
         showCancelButton: true,
-        confirmButtonColor: '#6493cd', //--steel-blue-500
+        confirmButtonColor: '#6493cd', //--color-tone-500
         confirmButtonText: 'Keep here',
-        cancelButtonColor: '#364972', //--steel-blue-800
+        cancelButtonColor: '#364972', //--color-tone-800
         cancelButtonText: 'Watch more...',
-        color: '#364972', //--steel-blue-900
-        background: '#4f7abf' //--steel-blue-600
+        color: '#364972', //--color-tone-900
+        background: '#4f7abf' //--color-tone-600
       }).then(res => {
-        if (res.isDismissed) {
+        if (!res.isConfirmed) {
           //Go to github
           Swal.fire({
             position: 'top-end',
             icon: 'success',
             title: 'Redirecting...',
             showConfirmButton: false,
-            color: '#4f7abf', //--steel-blue-600
-            background: '#364972', //--steel-blue-900
+            color: '#4f7abf', //--color-tone-600
+            background: '#364972', //--color-tone-900
             timer: 750
           }).then(() => {
             window.open(repo.html_url, '_blank');

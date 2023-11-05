@@ -13,9 +13,9 @@
   </template>  
 
 <script>
-import config from '../config/config.js'
-import '../styles/HomeView.css'
-import axios from 'axios'
+import { fetchGitHubUserInformation } from '@/utils/fetchData';
+import config from '@/config/config.js'
+import '@/styles/HomeView.css'
 
 export default {
   created() {
@@ -31,8 +31,7 @@ export default {
   methods: {
     async fetchDataFromAPI() {
       try {
-        const informationRequest = await axios.get(`https://api.github.com/users/${config.gh.account}`); 
-        this.user_information = informationRequest.data;
+        this.user_information = await fetchGitHubUserInformation();
       } catch (error) {
         console.error('Error al cargar datos desde la API', error);
       }
