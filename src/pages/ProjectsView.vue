@@ -35,7 +35,6 @@
 import { getScreenResolution } from '@/utils/globals.js';
 import { fetchUserRepositories } from '@/utils/fetchData';
 import config from '@/config/config.js'
-import '@/styles/ProjectsView.css'
 import Swal from 'sweetalert2';
 
 
@@ -136,3 +135,150 @@ export default {
   },
 };
 </script>
+
+<style>
+/* Mobile */
+@media screen and (max-width: 1024px) {
+	.projects-body{
+		justify-content: center;
+	}
+	.repositories{
+		justify-content: center;
+	}
+
+	.repo-card{
+		width: 60vw;
+	}
+
+	.special-title{
+		display: none;
+	}
+}
+
+  
+/* Computer */
+@media screen and (min-width: 1024px) {
+	.projects-body{
+		width: 80vw;
+	}
+
+	.repositories{
+		justify-content: start;
+		width: 50vw;
+	}
+
+	.repo-card{
+		width: 20vw;
+	}
+
+	.h3-container{
+		right: 0; 
+	}
+
+	.controls{
+		bottom: 15vh;
+	}
+}
+
+.repositories {
+	display: flex;
+	flex-wrap: wrap;
+	flex-direction: row;
+	gap: 3rem;
+}
+
+.repo-card {
+	cursor:pointer !important;
+	background-color: var(--color-tone-100);
+	border-radius: 5px;
+	padding: 20px;
+	box-shadow: 0 2px 4px rgba(0, 0, 0, .1);
+	transition: .25s;
+	height: 10vh;
+}
+  
+.repo-card:hover {
+	transform: scale(1.1);
+	transition: .3s;
+}
+  
+  .repo-card a {
+	font-size: 20px;
+	font-weight: bold;
+	color: inherit;
+	text-decoration: none;
+  }
+  
+  .repo-card p {
+	margin: 10px 0;
+  }
+  
+  .repo-card-details, .repo-card-details p {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+  }
+
+  .repo-card-container:hover {
+	background-color: rgba(255, 255, 255, 0.1);
+  }
+
+  .projects-body {
+	margin-top: 5%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+	justify-content: start;
+  }
+  
+  .h3-container {
+    position: absolute;
+    top: 50%; 
+    transform: translateY(-50%); 
+    z-index: -1;
+  }
+  .special-title {
+    color: var(--color-tone-950);
+    transform: rotate(90deg);
+    font-size: 7rem;
+    text-shadow: 1px 3px 5px var(--color-tone-900);
+	top: 0;
+	left: 0;
+  }
+
+  .controls{
+	display: flex;
+	width: 20vw;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: space-between;
+	position: absolute;
+  }
+
+  .controls a{
+	color: var(--color-tone-500);
+	border: 3px solid var(--color-tone-500);
+	font-size: 5rem;
+	cursor: pointer;
+	border-radius: 10px;
+	padding: 1%;
+  }
+
+  .controls a.disabled-link {
+	color: var(--color-tone-800);
+	border: 3px solid var(--color-tone-800);
+	text-decoration: none;
+	user-select: none;
+  }
+  
+  .controls a.disabled-link:hover {
+	cursor: not-allowed !important;
+	user-select: none;
+  }
+
+  .controls h1{
+	font-size: 3rem;
+	line-height: 1rem;
+  }
+  
+  </style>
