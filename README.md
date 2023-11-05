@@ -41,8 +41,8 @@ You can see a live example of this template [here](https://azaldev.com).
 
 ## Screenshots
 
-![Screenshot 1](https://cdn.discordapp.com/attachments/1168626585562259577/1168626664444538920/image.png?ex=65527364&is=653ffe64&hm=dc20333424ab4778658f4bf03487ef9c294ba0fe83b0d163261896ac4ca5df61&)
-![Screenshot 2](https://media.discordapp.net/attachments/1168626585562259577/1168626722195902555/image.png?ex=65527372&is=653ffe72&hm=f739c0ccdd4e93e98614c810db817b94d0763bf8ae75d2d2e8dc5419e656b54f&=&width=1351&height=671)
+![Screenshot 1](https://media.discordapp.net/attachments/1168626585562259577/1170813270605697085/image.png?ex=655a67d4&is=6547f2d4&hm=34466cdffde14cc1de5c92ed21f03e3ae24721dd22795e0cd3fc2bfdf4457c68&=&width=960&height=459)
+![Screenshot 2](https://media.discordapp.net/attachments/1168626585562259577/1170813323130978354/image.png?ex=655a67e0&is=6547f2e0&hm=ee2b0e95ccad6e0d0b6f77488216c25a5e88eedfb6648a2f5342de0937565f63&=&width=960&height=460)
 
 ## Contributions
 
