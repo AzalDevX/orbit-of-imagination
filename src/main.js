@@ -1,4 +1,3 @@
-/* Set up using Vue 3 */
 import config from './config/config.js'
 import colors from './config/colors.js'
 import { createApp } from 'vue'
