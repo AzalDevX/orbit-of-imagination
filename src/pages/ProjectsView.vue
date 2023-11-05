@@ -32,12 +32,12 @@
 </template>
 
 <script>
-import { getScreenResolution } from '@/utils/globals.js';
 import { fetchUserRepositories } from '@/utils/fetchData';
+import { getScreenResolution } from '@/utils/globals.js';
 import config from '@/config/config.js'
 import Swal from 'sweetalert2';
 
-
+const style = document.documentElement.style;
 
 export default {
   created() {
@@ -87,12 +87,12 @@ export default {
         title: 'Oops...',
         text: msg,
         showCancelButton: true,
-        confirmButtonColor: '#6493cd', //--color-tone-500
-        cancelButtonColor: '#364972', //--color-tone-800
+        confirmButtonColor: style.getPropertyValue('--color-tone-500'),
+        cancelButtonColor: style.getPropertyValue('--color-tone-800'),
         confirmButtonText: 'Try again',
         cancelButtonText: 'Go back',
-        color: '#364972', //--color-tone-900
-        background: '#4f7abf' //--color-tone-600
+        color: style.getPropertyValue('--color-tone-900'),
+        background: style.getPropertyValue('--color-tone-600') 
       }).then(res => {
         if(res.isConfirmed){
           location.reload();
@@ -107,12 +107,12 @@ export default {
         title: repo.name,
         text: repo.description,
         showCancelButton: true,
-        confirmButtonColor: '#6493cd', //--color-tone-500
+        confirmButtonColor: style.getPropertyValue('--color-tone-500'),
         confirmButtonText: 'Keep here',
-        cancelButtonColor: '#364972', //--color-tone-800
+        cancelButtonColor: style.getPropertyValue('--color-tone-800'),
         cancelButtonText: 'Watch more...',
-        color: '#364972', //--color-tone-900
-        background: '#4f7abf' //--color-tone-600
+        color: style.getPropertyValue('--color-tone-900'),
+        background: style.getPropertyValue('--color-tone-950')
       }).then(res => {
         if (!res.isConfirmed) {
           //Go to github
@@ -121,8 +121,8 @@ export default {
             icon: 'success',
             title: 'Redirecting...',
             showConfirmButton: false,
-            color: '#4f7abf', //--color-tone-600
-            background: '#364972', //--color-tone-900
+            color: style.getPropertyValue('--color-tone-600'), //
+            background: style.getPropertyValue('--color-tone-900'), //
             timer: 750
           }).then(() => {
             window.open(repo.html_url, '_blank');
