@@ -22,7 +22,7 @@
       </div>
     </article>
     
-    <aside v-if="getScreenResolution > computerScreen" class="controls">
+    <aside v-if="screenResolution > computerScreen" class="controls">
       <a @click="previousPage" :class="{ 'disabled-link': currentPage === 1 }"> &lt; </a>
       <h1> {{ this.currentPage }} </h1>
       <a @click="nextPage" :class="{ 'disabled-link': currentPage * itemsPerPage >= totalItems }"> > </a>
@@ -39,6 +39,7 @@ import '@/styles/ProjectsView.css'
 import Swal from 'sweetalert2';
 
 
+
 export default {
   created() {
     this.fetchDataFromAPI();
@@ -53,7 +54,8 @@ export default {
       currentPage: 1,
       itemsPerPage: config.gh.repos_per_page,
       totalItems: 0,
-      computerScreen: config.computer.screen
+      computerScreen: config.computer.screen,
+      screenResolution: getScreenResolution()
     };
   },
   methods: {

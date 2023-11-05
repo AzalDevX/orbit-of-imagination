@@ -5,7 +5,7 @@
     </article>
     <div v-if="html_content" class="abme-content" v-html="html_content"></div>
     <div v-else>No content</div>
-    <a v-if="getScreenResolution > computerScreen" id="more-button" :href="github_link" target="__blank">Wanna view more about me? Click here!</a>
+    <a v-if="screenResolution > computerScreen" id="more-button" :href="github_link" target="__blank">Wanna view more about me? Click here!</a>
     </main>
   </template>
   
@@ -24,7 +24,8 @@
         user_readme: null,
         github_link: `https://github.com/${config.gh.account}`,
         computerScreen: config.computer.screen,
-        html_content: null
+        html_content: null,
+        screenResolution: getScreenResolution()
       };
     },
     methods: {
