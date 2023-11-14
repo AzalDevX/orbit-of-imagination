@@ -12,11 +12,19 @@
   --color-tone-800: #3e578f;
   --color-tone-900: #364972;
   --color-tone-950: #242e47;
+
   
   --color-black: #222;
   --color-white: #fff;
-
+  
   --text-color: var(--color-tone-400);
+
+  --accent-gradient: linear-gradient(
+			45deg,
+			rgb(var(--color-tone-700)),
+			rgb(var(--color-tone-200)) 30%,
+			var(--color-white) 60%
+		);
 }
 
 /* Mobile */

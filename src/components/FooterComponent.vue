@@ -38,6 +38,7 @@
     .footer-body{
         padding-top: 1%;
         position: sticky;
+        padding: 0 1rem;
         justify-content: space-evenly;
         box-shadow: 0 -50px 80px rgba(255, 255, 255, 0.1);
     }
