@@ -2,10 +2,10 @@
     <footer class="footer-body">
       <aside>
         <p>
-          Simple VUE portfolio template,<br v-if="getScreenResolution < computerScreen"> 
-          that will automatically sync <br v-if="getScreenResolution > computerScreen"> 
-          with <br v-if="getScreenResolution < computerScreen">
-          your github public data <br v-if="getScreenResolution < computerScreen">
+          Simple VUE portfolio template, 
+          that will automatically sync
+          with 
+          your github public data 
           and show the information in here
         </p>
       </aside>
@@ -17,7 +17,6 @@
 </template>  
   
 <script>
-  import { getScreenResolution } from '@/utils/globals.js';
   import config from '@/config/config.js'
   
   export default {
@@ -25,41 +24,42 @@
     data() {
       return { 
         github_link: 'https://github.com/AzalDevX',
-        computerScreen: config.computer.screen
       };
     },
     methods: {}
   };
 </script>
 
-<style>
+<style scoped>
 /* Mobile */
 @media screen and (max-width: 1024px) {
-    .footer-body{
-        padding-top: 1%;
-        position: sticky;
-        padding: 0 1rem;
-        justify-content: space-evenly;
-        box-shadow: 0 -50px 80px rgba(255, 255, 255, 0.1);
-    }
+  .footer-body{
+    padding-top: 1%;
+    position: sticky;
+    padding: 0 1rem;
+    flex-direction: column;
+    justify-content: space-evenly;
+    padding-bottom: 1vh;
+    width: auto;
+  }
 }
 
 /* Computer */
 @media screen and (min-width: 1024px) {
     .footer-body{
-        font-size: .8rem;
-        position: absolute;
-        justify-content: space-around;
+      font-size: .8rem;
+      position: absolute;
+      justify-content: space-around;
+      flex-direction: row;
+      width: 100vw;
     }
 }
 
 .footer-body {
     background-color: rgba(255, 255, 255, 0.1);
     bottom: 0;
-    width: 100vw;
     border-radius: 15px 15px 0 0;
     display: flex;
-    flex-direction: row;
     align-items: center;
     font-size: .6rem;
 }
@@ -90,5 +90,6 @@
     color: white;
     width: 50%;
 }
+
 
 </style>
