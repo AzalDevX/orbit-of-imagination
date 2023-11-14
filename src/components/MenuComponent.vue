@@ -42,7 +42,7 @@ export default {
   }
   
   .menu{
-    width: 100vw;
+    width: 99vw;
   }
 }
 
@@ -51,8 +51,8 @@ export default {
   .menu {
     flex-direction: row;
     width: 50%;
-    justify-content: space-evenly;
-    align-items: center;
+    /* justify-content: space-evenly; */
+    justify-content: center;
     padding: 2rem 1rem .5rem 1rem;
   }
 
