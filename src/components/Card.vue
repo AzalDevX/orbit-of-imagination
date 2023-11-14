@@ -1,10 +1,12 @@
 <template>   
   <div  @click="swalRepository()" class="repo-card-details">
-    <a>{{ repo.name }}</a>
-    <p>
-      <img src="../assets/star.svg" alt="Star"> 
-      {{ repo.stargazers_count }}
-    </p>
+    <div>
+      <a>{{ repo.name }}</a>
+      <p>
+        <img src="../assets/star.svg" alt="Star"> 
+        {{ repo.stargazers_count }}
+      </p>
+    </div>
     <p>{{ repo.language }}</p>
   </div>
 </template>
@@ -57,7 +59,7 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
 /* Mobile */
 @media screen and (max-width: 1024px) {
 	.repo-card-details{
@@ -72,20 +74,27 @@ export default {
 	}
 }
 
+.repo-card-details div{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
 .repo-card-details {
-	cursor:pointer !important;
+  align-items: flex-start;
+  flex-direction: column;
+  cursor:pointer !important;
 	background-color: var(--color-tone-100);
 	border-radius: 5px;
-	padding: 20px;
+	padding: 16px;
 	box-shadow: 0 2px 4px rgba(0, 0, 0, .1);
 	transition: .25s;
 	height: 10vh;
 }
 
 .repo-card-details:hover {
-  background-position: 0;
-	/* background-image: var(--accent-gradient); */
-	transition: .3s;
   transform: scale(1.1);
 }
   
@@ -103,6 +112,5 @@ export default {
   .repo-card-details, .repo-card-details p {
 	display: flex;
 	justify-content: space-between;
-	align-items: center;
   }
 </style>

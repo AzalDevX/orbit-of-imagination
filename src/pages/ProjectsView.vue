@@ -9,7 +9,13 @@
       </div>
     </article>
 
-    <PaginationControls />
+    <aside v-if="screenResolution > computerScreen" class="controls">
+      <a @click="previousPage" :class="{ 'disabled-link': currentPage === 1 }"> &lt; </a>
+      <h1> {{ this.currentPage }} </h1>
+      <a @click="nextPage" :class="{ 'disabled-link': currentPage * itemsPerPage >= totalItems }"> > </a>
+    </aside>
+
+    <!-- <PaginationControls /> -->
   </main>
 </template>
 
@@ -132,6 +138,8 @@ export default {
 	.repositories{
 		justify-content: start;
 		width: 50vw;
+    height: 35vh;
+    justify-content: flex-start;
 	}
 
 	.h3-container{

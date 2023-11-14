@@ -53,7 +53,7 @@ export default {
 
 .home-view{
   justify-content: start;
-  
+  overflow-y: hidden;
 }
 
 .home-view img{
@@ -71,23 +71,23 @@ export default {
 
 /* Computer */
 @media screen and (min-width: 1024px) {
-.name{
-  font-size: 7rem;
-}
-
-.home-view{
-  justify-content: center;
-}
-
-.home-view img{
-  transform: translate(-50%, -50%) scale(1.2);
-  top: 40%;
-  left: 50%;
-}
-
-.bio{
-  font-size: 1.1rem;
-}
+  .name{
+    font-size: 7rem;
+  }
+  
+  .home-view{
+    justify-content: center;
+  }
+  
+  .home-view img{
+    transform: translate(-50%, -50%) scale(1.2);
+    top: 40%;
+    left: 50%;
+  }
+  
+  .bio{
+    font-size: 1.1rem;
+  }
 }
 
 .home-view {
