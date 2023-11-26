@@ -32,8 +32,7 @@ To have your GitHub projects automatically displayed on your portfolio, follow t
 
 1. Clone this repository: `git clone https://github.com/AzalDevX/orbit-of-imagination.git`.
 2. Customize the configuration and colors files to your preferences.
-3. Add your projects and content as needed.
-4. Deploy your portfolio on a web server or hosting platform.
+3. Deploy your portfolio on a web server or hosting platform.
 
 ## Live Example
 
