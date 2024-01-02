@@ -9,16 +9,20 @@ const app = createApp(App)
 
 app.use(router)
 app.mount('#app')
+app.provide('toggleTheme', toggleTheme)
 
 //Set the title of the web
 document.title = config.web.name
 
 //Set the color palette (11 different colors)
-const style = document.documentElement.style;
+const style = document.documentElement.style
 for (const key in colors.global) {
     if (colors.global.hasOwnProperty(key)) {
         style.setProperty(key, colors.global[key]);
     }
 }
+
+app.config.globalProperties.toggleTheme = toggleTheme
+
 
 

@@ -1,29 +1,55 @@
 <template>
   <header id="menu-content">
-
     <h2>{{ config.web.name }}</h2>
-
     <nav class="menu">
       <RouterLink to="/">Home</RouterLink>
       <RouterLink to="/about">About</RouterLink>
       <RouterLink to="/projects">Projects</RouterLink>
+      <button @click="toggleThemeAndImg">
+        <img :src="imageSrc" alt="Moon">
+      </button>
     </nav>
   </header>
-  
 </template>
 
 <script>
-import config from '@/config/config.js'
-import { RouterLink } from 'vue-router'
+import { ref } from 'vue';
+import config from '@/config/config.js';
+import useTheme from '@/config/useTheme';
+import { RouterLink } from 'vue-router';
+
+import moonImage from '@/assets/icons/moon.svg';
+import sunImage from '@/assets/icons/sun.svg';
 
 export default {
-  data() {
-    return {
-      config
+  setup() {
+    const { toggleTheme } = useTheme();
+    const imageSrc = ref(moonImage);
+
+    const toggleThemeAndImg = () => {
+      toggleTheme();
+      updateImageSrc();
     };
-  }
+
+    const updateImageSrc = () => {
+      imageSrc.value = toggleImg();
+    };
+
+    const toggleImg = () => {
+      return config.web.theme === 'light' ? sunImage : moonImage;
+    };
+
+    return {
+      config,
+      imageSrc,
+      toggleThemeAndImg,
+    };
+  },
 };
 </script>
+
+
+
 
 <style>
 /* Mobile */
@@ -53,7 +79,6 @@ export default {
     width: 50%;
     /* justify-content: space-evenly; */
     justify-content: center;
-    padding: 2rem 1rem .5rem 1rem;
   }
 
   #menu-content{
@@ -64,6 +89,15 @@ export default {
   #menu-content h2{
     font-size: 2.5rem;
   }
+}
+
+button{
+  background-color: transparent;
+  border: none;
+}
+
+button img{
+  fill: red;
 }
 
 #menu-content{

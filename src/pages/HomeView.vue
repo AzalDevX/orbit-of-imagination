@@ -53,6 +53,7 @@ export default {
 
 .home-view{
   justify-content: start;
+  height: 100vh;
   overflow-y: hidden;
 }
 
@@ -94,7 +95,7 @@ export default {
 display: flex;
 flex-direction: column;
 align-items: center;
-height: 100vh;
+height: 80vh;
 position: relative;
 overflow: hidden !important;
 }

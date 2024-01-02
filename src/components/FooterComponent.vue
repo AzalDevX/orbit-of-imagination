@@ -16,9 +16,7 @@
     </footer>
 </template>  
   
-<script>
-  import config from '@/config/config.js'
-  
+<script>  
   export default {
     created() {},
     data() {

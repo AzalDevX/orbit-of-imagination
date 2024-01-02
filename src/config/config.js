@@ -5,6 +5,7 @@ export default {
     },
     web: {
       name: "Orbit of Imagination",
+      theme: "light",
     },
     gh: {
       account: "AzalDevX",

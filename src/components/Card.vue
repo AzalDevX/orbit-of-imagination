@@ -3,7 +3,7 @@
     <div>
       <a>{{ repo.name }}</a>
       <p>
-        <img src="../assets/star.svg" alt="Star"> 
+        <img src="@/assets/star.svg" alt="Star"> 
         {{ repo.stargazers_count }}
       </p>
     </div>
@@ -86,7 +86,7 @@ export default {
   align-items: flex-start;
   flex-direction: column;
   cursor:pointer !important;
-	background-color: var(--color-tone-100);
+	background-color: var(--color-tone-200);
 	border-radius: 5px;
 	padding: 16px;
 	box-shadow: 0 2px 4px rgba(0, 0, 0, .1);
