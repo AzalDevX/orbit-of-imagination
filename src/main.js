@@ -9,7 +9,6 @@ const app = createApp(App)
 
 app.use(router)
 app.mount('#app')
-app.provide('toggleTheme', toggleTheme)
 
 //Set the title of the web
 document.title = config.web.name
