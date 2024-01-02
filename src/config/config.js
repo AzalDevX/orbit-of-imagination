@@ -6,7 +6,7 @@ export default {
     web: {
       name: "Orbit of Imagination",
       theme: "light",
-      localStorageKey: "OoI-theme"
+      local_storage_key: "OoI-theme"
     },
     gh: {
       account: "AzalDevX",
