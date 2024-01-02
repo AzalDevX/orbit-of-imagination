@@ -22,7 +22,5 @@ for (const key in colors.global) {
     }
 }
 
-app.config.globalProperties.toggleTheme = toggleTheme
-
 
 

@@ -1,11 +1,21 @@
 // useTheme.js
-import { ref, onMounted, onBeforeMount } from 'vue';
+import { ref, onBeforeMount, watchEffect } from 'vue';
 import config from './config.js';
 import colors from './colors.js';
 
-const localStorageKey = 'OoI-theme';
+const localStorageKey = config.web.localStorageKey;
 const theme = ref(localStorage.getItem(localStorageKey) || config.web.theme);
 const colorScheme = ref(colors[theme.value]);
+
+
+watchEffect(() => {
+  const storedTheme = localStorage.getItem(localStorageKey);
+  if (storedTheme && storedTheme !== theme.value) {
+    theme.value = storedTheme;
+    colorScheme.value = colors[theme.value];
+    updateStyles();
+  }
+});
 
 function toggleTheme() {
   theme.value = theme.value === 'light' ? 'dark' : 'light';

@@ -13,7 +13,7 @@
 </template>
 
 <script>
-import { ref } from 'vue';
+import { ref, onBeforeMount } from 'vue';
 import config from '@/config/config.js';
 import useTheme from '@/config/useTheme';
 import { RouterLink } from 'vue-router';
@@ -23,7 +23,7 @@ import sunImage from '@/assets/icons/sun.svg';
 
 export default {
   setup() {
-    const { toggleTheme } = useTheme();
+    const { toggleTheme, theme } = useTheme(); 
     const imageSrc = ref(moonImage);
 
     const toggleThemeAndImg = () => {
@@ -36,16 +36,23 @@ export default {
     };
 
     const toggleImg = () => {
-      return config.web.theme === 'light' ? sunImage : moonImage;
+      console.log(theme.value);
+      return theme.value === 'light' ? sunImage : moonImage;
     };
 
+    onBeforeMount(() => {
+      updateImageSrc();
+    });
+
     return {
-      config,
+      config: { ...config }, 
       imageSrc,
       toggleThemeAndImg,
     };
   },
 };
+
+
 </script>
 
 
