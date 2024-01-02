@@ -96,7 +96,7 @@
   .special-title {
     color: var(--color-tone-950);
     transform: rotate(90deg);
-    text-shadow: 1px 3px 5px var(--color-tone-900)
+    text-shadow: 1px 3px 5px var(--color-tone-600)
   }
 
   .abme-content {
@@ -119,7 +119,7 @@
     margin: 2%;
     background-color: var(--color-tone-700);
     text-decoration: none;
-    color: var(--color-tone-400);
+    color: var(--color-tone-500);
     border-radius: 5px;
     transition: .2s;
   }
@@ -129,7 +129,7 @@
     color: var(--color-tone-300);
     border-radius: 10px;
     transition: .25s;
-    transform: scale(1.1);
+    transform: scale(1.05);
   }
 </style>
   

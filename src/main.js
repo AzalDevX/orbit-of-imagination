@@ -11,7 +11,7 @@ app.use(router)
 app.mount('#app')
 
 //Set the title of the web
-document.title = config.web.name
+document.title = `${config.web.name} by ${config.gh.account}`
 
 //Set the color palette (11 different colors)
 const style = document.documentElement.style
