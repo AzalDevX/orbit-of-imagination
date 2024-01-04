@@ -5,7 +5,7 @@ export default {
     },
     web: {
       name: "Orbit of Imagination",
-      theme: "light",
+      theme: "dark",
       local_storage_key: "OoI-theme"
     },
     gh: {
