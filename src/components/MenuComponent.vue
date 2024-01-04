@@ -36,7 +36,6 @@ export default {
     };
 
     const toggleImg = () => {
-      console.log(theme.value);
       return theme.value === 'light' ? sunImage : moonImage;
     };
 
