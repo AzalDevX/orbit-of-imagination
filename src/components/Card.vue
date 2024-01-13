@@ -34,9 +34,9 @@ export default {
         showCancelButton: true,
         confirmButtonColor: style.getPropertyValue('--color-tone-500'),
         confirmButtonText: 'Keep here',
-        cancelButtonColor: style.getPropertyValue('--color-tone-800'),
+        cancelButtonColor: style.getPropertyValue('--color-tone-700'),
         cancelButtonText: 'Watch more...',
-        color: style.getPropertyValue('--color-tone-900'),
+        color: style.getPropertyValue('--color-tone-700'),
         background: style.getPropertyValue('--color-tone-950')
       }).then(res => {
         if (!res.isConfirmed) {
