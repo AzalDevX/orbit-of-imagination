@@ -46,8 +46,8 @@ export default {
             icon: 'success',
             title: 'Redirecting...',
             showConfirmButton: false,
-            color: style.getPropertyValue('--color-tone-600'), //
-            background: style.getPropertyValue('--color-tone-900'), //
+            color: style.getPropertyValue('--color-green'), //
+            background: style.getPropertyValue('--color-tone-950'), //
             timer: 750
           }).then(() => {
             window.open(repo.html_url, '_blank');

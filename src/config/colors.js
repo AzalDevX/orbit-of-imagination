@@ -12,6 +12,9 @@ export default {
     '--color-tone-800': '#3e578f',
     '--color-tone-900': '#364972',
     '--color-tone-950': '#151515',
+    
+    '--color-green': '#a5dc86',
+
   },
   light: {
     '--color-tone-50': '#151515',
@@ -25,5 +28,7 @@ export default {
     '--color-tone-800': '#cddff0',
     '--color-tone-900': '#e3ecf6',
     '--color-tone-950': '#f3f7fb',
+
+    '--color-green': '#a5dc86',
   }
 };
