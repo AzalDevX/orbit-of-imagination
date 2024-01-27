@@ -3,7 +3,11 @@
     <SpecialTitle :title="'About Me'"/>
     <div v-if="html_content" class="abme-content" v-html="html_content"></div>
     <div v-else>No content</div>
-    <a v-if="screenResolution > computerScreen" id="more-button" :href="github_link" target="__blank">Wanna view more about me? Click here!</a>
+    <Button 
+      v-if="screenResolution > computerScreen" 
+      :link="'github_link'"
+      :textToShow="'Wanna view more about me? Click here!'" 
+    />
     </main>
   </template>
   
@@ -12,10 +16,12 @@
   import SpecialTitle from '../components/SpecialTitle.vue';
   import { fetchGitHubReadme } from '@/utils/fetchData';
   import config from '@/config/config';
+  import Button from '../components/button.vue'
   
   export default{
     components: {
       SpecialTitle,
+      Button
   },
     created() {
       this.fetchDataFromAPI();
