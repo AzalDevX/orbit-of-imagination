@@ -11,13 +11,13 @@ export default {
     '--color-tone-700': '#4669af',
     '--color-tone-800': '#3e578f',
     '--color-tone-900': '#364972',
-    '--color-tone-950': '#151515',
+    '--color-tone-950': '#0B1623',
     
     '--color-green': '#a5dc86',
 
   },
   light: {
-    '--color-tone-50': '#151515',
+    '--color-tone-50': '#0B1623',
     '--color-tone-100': '#364972',
     '--color-tone-200': '#3e578f',
     '--color-tone-300': '#4669af',
